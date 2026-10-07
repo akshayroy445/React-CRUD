@@ -1,0 +1,170 @@
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Insert() {
+  let [frmdata, setFrmdata] = useState({});
+
+  let navigate = useNavigate();
+
+  function data(e) {
+    let { name, value } = e.target;
+    setFrmdata({ ...frmdata, [name]: value });
+  }
+
+  function frmsubmit(e) {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:3000/userdata", frmdata)
+      .then(() => {
+        alert("Data submitted...");
+        navigate("/show");
+      });
+  }
+
+  return (
+    <>
+      <h1
+        style={{
+          textAlign: "center",
+          color: "#2563eb",
+          marginTop: "40px",
+          fontFamily: "Arial",
+        }}
+      >
+        Insert User
+      </h1>
+
+      <form
+        onSubmit={frmsubmit}
+        style={{
+          width: "400px",
+          margin: "30px auto",
+          padding: "30px",
+          backgroundColor: "#ffffff",
+          borderRadius: "12px",
+          boxShadow: "0 5px 20px rgba(0,0,0,0.15)",
+          fontFamily: "Arial",
+        }}
+      >
+        <label style={{ fontWeight: "bold", color: "#333" }}>
+          Name
+        </label>
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          onChange={data}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "7px",
+            border: "1px solid #ccc",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <label
+          style={{
+            display: "block",
+            marginTop: "18px",
+            fontWeight: "bold",
+            color: "#333",
+          }}
+        >
+          Age
+        </label>
+
+        <input
+          type="text"
+          name="age"
+          placeholder="Enter Age"
+          onChange={data}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "7px",
+            border: "1px solid #ccc",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <label
+          style={{
+            display: "block",
+            marginTop: "18px",
+            fontWeight: "bold",
+            color: "#333",
+          }}
+        >
+          Contact
+        </label>
+
+        <input
+          type="text"
+          name="contact"
+          placeholder="Enter Contact"
+          onChange={data}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "7px",
+            border: "1px solid #ccc",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <label
+          style={{
+            display: "block",
+            marginTop: "18px",
+            fontWeight: "bold",
+            color: "#333",
+          }}
+        >
+          City
+        </label>
+
+        <input
+          type="text"
+          name="city"
+          placeholder="Enter City"
+          onChange={data}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "7px",
+            border: "1px solid #ccc",
+            borderRadius: "6px",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <input
+          type="submit"
+          value="Submit"
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "25px",
+            backgroundColor: "#2563eb",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            fontSize: "16px",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        />
+      </form>
+    </>
+  );
+}
+
+export default Insert;
+

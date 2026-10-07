@@ -1,0 +1,47 @@
+{
+  "userdata": [
+    {
+      "name": "Ranveer",
+      "age": "22",
+      "contact": "6723565456",
+      "city": "bhopal",
+      "id": "qki3E5MGkKw"
+    },
+    {
+      "name": "Arjun",
+      "age": "22",
+      "contact": "3256878727",
+      "city": "saharsa",
+      "id": "CwGVHAFwkRg"
+    },
+    {
+      "name": "qasim",
+      "age": "12",
+      "contact": "12345678",
+      "city": "bpl",
+      "id": "cfJ3gvcbR-k"
+    },
+    {
+      "name": "Raju",
+      "age": "25",
+      "contact": "6204133093",
+      "city": "India",
+      "id": "q-zC9hXhxbA"
+    },
+    {
+      "name": "MITTHU",
+      "age": "21",
+      "contact": "7261078232",
+      "city": "DARBHANGA",
+      "id": "5GRBELaAqi4"
+    },
+    {
+      "name": "Gautam",
+      "age": "23",
+      "contact": "6205560492",
+      "city": "Saharsa",
+      "id": "Pu86z1iPuFs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
